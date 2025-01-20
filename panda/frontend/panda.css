@@ -1,0 +1,19 @@
+div {
+  outline: 1px solid red;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.gnb {
+  display: flex;
+  justify-content: space-around;
+}
+
