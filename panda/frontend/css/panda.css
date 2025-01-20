@@ -24,9 +24,9 @@ body {
   position: sticky;
   top: 0px;
   height: 70px;
-  width: 100%;
   align-items: center;
   justify-content: space-around;
+  background-color: white;
 }
 
 .gnb--item__left {
@@ -36,3 +36,21 @@ body {
   padding: 0px 200px;
 }
 
+.header {
+  display: flex;
+  height: 540px;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #CFE5FF;
+}
+
+.header--background {
+  position: absolute;
+  width: 100%;
+  background-color: #CFE5FF;
+  
+}
+
+.header--content {
+  position: relative;
+}
