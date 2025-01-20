@@ -3,6 +3,7 @@
 #wrapper {
   margin: 0 auto;
   width: 1920px;
+  
 }
 
 div {
@@ -16,17 +17,23 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  width: 1920px;
+}
+
+.gnb--wrapper {
+  position: absolute;
+  width: 100%;
 }
 
 .gnb {
   display: flex;
   position: sticky;
   top: 0px;
+  width: 100%;
   height: 70px;
   align-items: center;
   justify-content: space-around;
-  background-color: white;
+  background-color: #FFFFFF;
+  z-index: 10;
 }
 
 .gnb--item__left {
@@ -41,16 +48,30 @@ body {
   height: 540px;
   justify-content: center;
   align-items: flex-end;
-  background-color: #CFE5FF;
+  /* background-color: #CFE5FF; */
 }
 
 .header--background {
   position: absolute;
   width: 100%;
+  height: 100%;
   background-color: #CFE5FF;
   
 }
 
 .header--content {
   position: relative;
+  width: 1920px;
+}
+
+.center {
+  display: flex;
+}
+
+.bottom {
+  display: flex;
+}
+
+.footer {
+  display: flex;
 }
