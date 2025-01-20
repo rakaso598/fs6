@@ -1,0 +1,29 @@
+body {
+  background-color: #f9fafc;
+  margin: 60px;
+}
+
+.red {
+  background-color: #e46e80;
+  width: 500px;
+  height: 500px;
+}
+
+.green {
+  background-color: #32b9c1;
+  width: 300px;
+  height: 300px;
+}
+
+
+.blue {
+  background-color: #5195ee;
+  width: 100px;
+  height: 100px;
+}
+
+.orange {
+  background-color: #f18575;
+  width: 100px;
+  height: 100px;
+}

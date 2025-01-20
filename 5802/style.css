@@ -1,0 +1,15 @@
+body {
+  background-color: #f9fafc;
+  margin: 60px;
+}
+
+.red {
+  background-color: #e46e80;
+  width: 100px;
+  height: 100px;
+}
+
+.skeleton {
+  width: 100%;
+  margin: 48px 0;
+}

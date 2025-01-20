@@ -1,0 +1,37 @@
+body {
+  background-color: #f9fafc;
+  margin: 60px;
+}
+
+.box {
+  color: #f9fafc;
+  padding: 30px;
+}
+
+.red {
+  background-color: #e46e80;
+}
+
+.blue {
+  background-color: #5195ee;
+}
+
+.green {
+  background-color: #32b9c1;
+  position: relative;
+  /* absolute는 static이 아닌 상위 요소를 기준 */
+  top: 30px;
+}
+ 
+.orange {
+  background-color: #f18575;
+}
+
+.yellow {
+  background-color: #fbc85b;
+}
+
+.purple {
+  background-color: #8579ef;
+}
+
