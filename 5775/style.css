@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9fafc;
+  margin: 60px;
+}
+
+.container {
+  border: 5px dashed #cacfd9;
+  width: 500px;
+  height: 500px;
+  display: flex;
+}
+
+.box {
+  border-radius: 15px;
+  color: #f9fafc;
+  padding: 10px;
+  width: 300px;
+}
+
+.red {
+  background-color: #e46e80;
+  flex-shrink: 0;
+  /* flex-shrink 값도 상대적인 값임 */
+  /* flex-grow: 1; */
+}
+
+.green {
+  background-color: #32b9c1;
+  /* flex-grow: 1; */
+  /* flex-grow 요소 꽉 채우기 - 값은 상대적인 숫자 */
+}
+
+.blue {
+  background-color: #5195ee;
+  flex-shrink: 2;
+  /* flex-shrink 박스 크기를 원래크기로 -> 0 */
+}
+
+/*
+정리 :
+flex-grow를 1로 하면 요소를 꽉 채움
+flex-shrink 0으로 하면 원래 크기로
+*/

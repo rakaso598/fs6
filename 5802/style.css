@@ -7,6 +7,12 @@ body {
   background-color: #e46e80;
   width: 100px;
   height: 100px;
+  position: fixed;
+  /* fixed : 원래 위치를 차지하고 있지 않음 ( absolute의 특성처럼 ) */
+  /* 당근마켓의 글쓰기 버튼처럼 늘 고정되어 있는 버튼같은곳에 활용 가능 */
+  /* fixed의 기준 : 브라우저의 화면이 기준 */
+  top: 30px;
+  left: 50px;
 }
 
 .skeleton {
