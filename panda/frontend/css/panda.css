@@ -1,22 +1,30 @@
 @import "./reset.css";
 
+#wrapper {
+  margin: 0 auto;
+  width: 1920px;
+}
+
 div {
   outline: 1px solid red;
+}
+
+body {
+  margin: 0px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   width: 1920px;
-  align-items: center;
 }
 
 .gnb {
   display: flex;
-  position: fixed;
+  position: sticky;
+  top: 0px;
   height: 70px;
-  width: 1920px;
-  position: relative;
+  width: 100%;
   align-items: center;
   justify-content: space-around;
 }
