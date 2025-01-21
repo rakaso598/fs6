@@ -2,12 +2,11 @@
 
 #wrapper {
   margin: 0 auto;
-  /* width: 1920px; */
 }
 
-div {
+/* div {
   outline: 1px solid red;
-}
+} */
 
 .container {
   display: flex;
