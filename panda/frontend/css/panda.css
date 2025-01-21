@@ -2,7 +2,7 @@
 
 #wrapper {
   margin: 0 auto;
-  width: 1920px;
+  /* width: 1920px; */
 }
 
 div {
@@ -56,10 +56,12 @@ div {
 
 .center {
   display: flex;
+  justify-content: center;
 }
 
 .bottom {
   display: flex;
+  justify-content: center;
 }
 
 .footer_container {
