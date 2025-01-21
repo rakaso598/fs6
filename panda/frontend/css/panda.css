@@ -19,11 +19,6 @@ body {
   flex-direction: column;
 }
 
-.gnb--wrapper {
-  position: absolute;
-  width: 100%;
-}
-
 .gnb {
   display: flex;
   position: sticky;
@@ -48,7 +43,7 @@ body {
   height: 540px;
   justify-content: center;
   align-items: flex-end;
-  /* background-color: #CFE5FF; */
+  position: relative;
 }
 
 .header--background {
@@ -61,7 +56,6 @@ body {
 
 .header--content {
   position: relative;
-  width: 1920px;
 }
 
 .center {
