@@ -21,6 +21,12 @@
   font-weight: 400;
 }
 
+.xl-16px-semibold {
+  font-family: 'Pretendard-Regular', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
 .xl-20px-bold {
   font-family: 'Pretendard-Regular', sans-serif;
   font-size: 20px;
@@ -29,7 +35,7 @@
 
 input::placeholder {
   font-family: 'Pretendard-Regular', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
 }
 
