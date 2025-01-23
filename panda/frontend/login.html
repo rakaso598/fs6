@@ -11,32 +11,41 @@
 <body>
   <div id="wrapper">
     <div class="login-container">
+      <!-- logo -->
       <div class="logo-wrap">
         <div class="logo--body">
           <img src="./img/step_two/logo.png" alt="로고">
         </div>
       </div>
+      <!-- x -->
+      <!-- form -->
+      <form action="/examples/media/action_target.php" method="get"></form>
       <div class="email-wrap">
-        <div class="email--title">
+        <div class="email--title" style="margin-bottom: 10px;">
           <img src="./img/step_two/text_email.png" alt="이메일">
         </div>
         <div class="email--body">
-          <img src="./img/step_two/email_input.png" alt="이메일입력">
+          <input id="input-email" type="email" name="email" placeholder="이메일을 입력해주세요"><br>
         </div>
       </div>
       <div class="pw-wrap">
-        <div class="pw--title">
+        <div class="pw--title" style="margin-bottom: 10px;">
           <img src="./img/step_two/text_pw.png" alt="비밀번호">
         </div>
         <div class="pw--body">
-          <img src="./img/step_two/pw_input.png" alt="비밀번호입력">
+          <input id="input-pw" type="password" name="pw" placeholder="비밀번호를 입력해주세요"><br>
         </div>
       </div>
       <div class="login-wrap">
         <div class="login--body">
-          <img src="./img/step_two/btn_login.png" alt="로그인버튼">
+          <button id="btn-submit" type="submit">
+            <span class="xl-20px-semibold">로그인</span>
+          </button>
         </div>
       </div>
+      </form>
+      <!-- x -->
+      <!-- sns_login -->
       <div class="sns-wrap">
         <div class="sns--body">
           <div class="sns--body__background">
@@ -50,6 +59,8 @@
           </div>
         </div>
       </div>
+      <!-- x -->
+      <!-- signup -->
       <div class="signup-wrap">
         <div class="signup--body">
           <div class="signup--body__text">
@@ -60,6 +71,7 @@
           </div>
         </div>
       </div>
+      <!-- x -->
     </div>
   </div>
 
