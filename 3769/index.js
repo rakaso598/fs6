@@ -56,12 +56,22 @@ const greenBtn = increaseXXX.parentElement.parentElement.children[1].children[3]
 
 console.log("그린버튼= ", greenBtn);
 
+
+
+const removeItem = function (event) {
+  event.target.remove() // 이벤트가 일어난 요소 (target) 을 제거
+} 
+
+
 let list = document.getElementById('list');
 const addListBtn = document.getElementById('add-list');
-
 addListBtn.onclick = function () {
-  list.innerHTML += '<li>Hello</li>';
-  console.log(list.outerHTML);
+  const newList = document.creeateElement('li');
+  newList.textContent = new Date();
+
+  newList.addEventListener('click', removeItem);
+  // list.prepand(newList) // 맨 앞 자식으로 추가
+  list.append(newList); // 맨 뒤 자식으로 추가
 };
 
 const resetListBtn = document.getElementById('reset-list');
@@ -117,7 +127,7 @@ console.log(att2.href);
 
 
 const item = document.getElementById('style')
-item.onclick = function () {
+const styleHandler = function () {
   const isLarge = item.classList.contains('large');
   const isBlue = item.classList.contains('blue-text');
   
@@ -134,6 +144,8 @@ item.onclick = function () {
   }
 }
 
+item.addEventListener('click', styleHandler); // ADD
+// item.removeEventListener('click', styleHandler); // REMOVE
 
 // if (document.getElementById('style').classList.contains(null)) {
 //   document.getElementById('style').classList.add('step_1');
