@@ -14,6 +14,15 @@ const a = {
     third: 'c',
 }
 
+const first = 'a'
+const second = 'b'
+const third = 'c'
+const x = {
+    first,
+    second,
+    third,
+}
+
 // const clone = a;
 // console.log(clone) // { first: 'a', second: 'b', third: 'c' }
 // console.log(a) // { first: 'a', second: 'b', third: 'c' }
@@ -26,3 +35,14 @@ const clone2 = {...a}
 clone2.first = 'A'
 console.log(clone2) // { first: 'A', second: 'b', third: 'c' }
 console.log(a) // { first: 'a', second: 'b', third: 'c' }
+
+x.first
+a['first']
+const key = 'first'
+a[key]
+
+const d = {
+    [key]: 'a'
+}
+console.log(d)
+
