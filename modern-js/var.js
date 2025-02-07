@@ -14,7 +14,7 @@ try {
 }
 
 try {
-console.log('i의 값: ', i)
+    console.log('i의 값: ', i)
 } catch {
     console.log("error: i가 정의되지 않음")
 }
