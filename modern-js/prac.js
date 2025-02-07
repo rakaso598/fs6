@@ -19,12 +19,19 @@ const two = {
 
 const threeArr = [...one.arr, 4, 5, ...two.arr]
 
-const three = {
-    head: one.head,
-    body: two.body,
-    arr: threeArr,
+// const three = {
+//     head: one.head,
+//     body: two.body,
+//     arr: threeArr,
+// }
+// console.log(three)
+
+const four = {
+    ...one,
+    ...two,
+    arr: [...one.arr, 4, 5, ...two.arr]
 }
-console.log(three)
+console.log(four)
 
 // 내 답안:
 
