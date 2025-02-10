@@ -48,7 +48,7 @@ input::placeholder {
 } */
 
 input:focus {
-  outline: 3px solid var(--focus-color);
+  outline: 2px solid var(--focus-color);
 }
 
 #input-email {
@@ -57,7 +57,7 @@ input:focus {
   border-radius: 12px;
   padding: 16px 24px;
   background-color: var(--input-bg-color);
-  border: none;
+  border: 3px solid #ffffff00;
 }
 
 #input-pw {
