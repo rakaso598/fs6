@@ -79,6 +79,34 @@ inputPw.addEventListener('focusout', (event) => {
 /* ************************************* */
 
 
+/* ************로그인버튼로직************ */
+btnSubmit.addEventListener('click', (event) => {
+  event.preventDefault();
+  const userForm = document.getElementById('user-form'); // 폼 객체
+  const email = document.getElementById('input-email').value; // 이메일 값
+  const password = document.getElementById('input-pw').value; // 비밀번호 값
+
+  const USER_DATA = [
+    { email: 'codeit1@codeit.com', password: "codeit101!" },
+    { email: 'codeit2@codeit.com', password: "codeit202!" },
+    { email: 'codeit3@codeit.com', password: "codeit303!" },
+    { email: 'codeit4@codeit.com', password: "codeit404!" },
+    { email: 'codeit5@codeit.com', password: "codeit505!" },
+    { email: 'codeit6@codeit.com', password: "codeit606!" },
+  ];
+
+  if (USER_DATA[email] === password) {
+    form.submit();
+  } else {
+    alert('비밀번호가 일치하지 않습니다.')
+    isPwOK = false;
+    userForm.reset();
+    updateButtonState();
+  }
+});
+/* ************************************* */
+
+
 /* ************* 버튼 함수 ************* */
 function updateButtonState() {
   btnSubmit.disabled = true;
@@ -95,4 +123,17 @@ function updateButtonState() {
   }
 }
 /* ************************************* */
+
+
+/* **************유저데이터************** */
+// const USER_DATA = [
+//   { email: 'codeit1@codeit.com', password: "codeit101!" },
+//   { email: 'codeit2@codeit.com', password: "codeit202!" },
+//   { email: 'codeit3@codeit.com', password: "codeit303!" },
+//   { email: 'codeit4@codeit.com', password: "codeit404!" },
+//   { email: 'codeit5@codeit.com', password: "codeit505!" },
+//   { email: 'codeit6@codeit.com', password: "codeit606!" },
+// ]
+/* ************************************* */
+
 
