@@ -95,14 +95,21 @@ btnSubmit.addEventListener('click', (event) => {
     { email: 'codeit6@codeit.com', password: "codeit606!" },
   ];
 
-  if (USER_DATA[email] === password) {
-    form.submit();
+  const findUser = USER_DATA.find(user => (user.email === email) && (user.password === password)); // 데이터 찾기
+  console.log(findUser); // 콘솔로그: 찾은 객체 반환 (디버깅용)
+  if (findUser) {
+    console.log('로그인 성공! 폼 제출합니다.');
+    userForm.submit();
   } else {
-    alert('비밀번호가 일치하지 않습니다.')
+    console.log(email);
+    console.log(password);
+    console.log(USER_DATA['email']);
+
+    alert('비밀번호가 일치하지 않습니다.');
     isPwOK = false;
     userForm.reset();
     updateButtonState();
-  }
+  };
 });
 /* ************************************* */
 
