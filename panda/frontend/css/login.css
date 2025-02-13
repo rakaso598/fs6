@@ -7,30 +7,6 @@
   font-style: normal;
 }
 
-/* @media (min-width: 744px) and (max-width: 1199px) {
-  #input-email {
-    width: 400px;
-  }
-  #input-pw {
-    width: 400px;
-  }
-  #btn-submit {
-    width: 400px;
-  }
-}
-
-@media (min-width: 375px) and (max-width: 767px) {
-  #input-email {
-    width: 400px;
-  }
-  #input-pw {
-    width: 400px;
-  }
-  #btn-submit {
-    width: 400px;
-  }
-} */
-
 :root {
   /* 색상 변수 */
   --focus-color: #3692FF;
@@ -66,10 +42,6 @@ input::placeholder {
 #wrapper {
   margin: 0 auto;
 }
-
-/* div {
-  outline : 1px solid red;
-} */
 
 input:focus {
   outline: 2px solid var(--focus-color);
@@ -175,4 +147,3 @@ input:focus {
 #sns-kakao-style {
   cursor: pointer;
 }
-

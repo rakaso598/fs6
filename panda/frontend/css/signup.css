@@ -9,10 +9,10 @@
 
 :root {
   /* 색상 변수 */
-  --focus-color : #3692FF;
-  --input-bg-color : #f3f4f6;
-  --btn-color : #9Ca3af;
-  --sns-bg-color : #e6f2ff;
+  --focus-color: #3692FF;
+  --input-bg-color: #f3f4f6;
+  --btn-color: #9Ca3af;
+  --sns-bg-color: #e6f2ff;
 }
 
 .xl-20px-semibold {
@@ -42,10 +42,6 @@ input::placeholder {
 #wrapper {
   margin: 0 auto;
 }
-
-/* div {
-  outline : 1px solid red;
-} */
 
 input:focus {
   outline: 3px solid var(--focus-color);
@@ -94,6 +90,8 @@ input:focus {
   padding: 16px 124px;
   background-color: var(--btn-color);
   border: none;
+  cursor: pointer;
+  background-color: #3691FF;
 }
 
 .login-container {
@@ -119,4 +117,56 @@ input:focus {
 .signup--body {
   display: flex;
   align-items: center;
+}
+
+#logo-wrap {
+  margin-bottom: 20px;
+}
+
+#logo-href-style {
+  cursor: pointer;
+}
+
+#email-title {
+  margin-bottom: 20px;
+}
+
+#input-email {
+  margin-bottom: 30px;
+}
+
+#nickname--title {
+  margin-bottom: 20px;
+}
+
+#input-nickname {
+  margin-bottom: 30px;
+}
+
+#pw--title {
+  margin-bottom: 20px;
+}
+
+#input-pw {
+  margin-bottom: 30px;
+}
+
+#pw-repeat--title {
+  margin-bottom: 20px;
+}
+
+#input-pw-repeat {
+  margin-bottom: 30px;
+}
+
+#login-wrap-span-style {
+  color: white;
+}
+
+#sns-kakao-style {
+  cursor: pointer;
+}
+
+#sns-google-style {
+  cursor: pointer;
 }
