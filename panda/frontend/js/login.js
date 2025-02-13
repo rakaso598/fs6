@@ -104,7 +104,13 @@ btnSubmit.addEventListener('click', (event) => {
     // console.log(email);
     // console.log(password);
     // console.log(USER_DATA['email']);
-    alert('비밀번호가 일치하지 않습니다.');
+    const modal = document.getElementById('passwordErrorModal');
+    modal.style.display = 'block'; // modal 창 표시
+  
+    const closeButton = modal.querySelector('.close-button');
+    closeButton.onclick = function() {
+      modal.style.display = 'none'; // modal 창 닫기
+    }
     isPwOK = false;
     userForm.reset();
     updateButtonState();
@@ -141,5 +147,3 @@ function updateButtonState() {
 //   { email: 'codeit6@codeit.com', password: "codeit606!" },
 // ]
 /* ************************************* */
-
-
