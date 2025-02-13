@@ -54,6 +54,7 @@ input:focus {
   padding: 16px 24px;
   background-color: var(--input-bg-color);
   border: none;
+  margin-bottom: 30px;
 }
 
 #input-nickname {
@@ -63,6 +64,7 @@ input:focus {
   padding: 16px 24px;
   background-color: var(--input-bg-color);
   border: none;
+  margin-bottom: 30px;
 }
 
 #input-pw {
@@ -127,20 +129,12 @@ input:focus {
   cursor: pointer;
 }
 
-#email-title {
+#email--title {
   margin-bottom: 20px;
-}
-
-#input-email {
-  margin-bottom: 30px;
 }
 
 #nickname--title {
   margin-bottom: 20px;
-}
-
-#input-nickname {
-  margin-bottom: 30px;
 }
 
 #pw--title {
