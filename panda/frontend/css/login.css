@@ -33,10 +33,10 @@
 
 :root {
   /* 색상 변수 */
-  --focus-color : #3692FF;
-  --input-bg-color : #f3f4f6;
-  --btn-color : #9Ca3af;
-  --sns-bg-color : #e6f2ff;
+  --focus-color: #3692FF;
+  --input-bg-color: #f3f4f6;
+  --btn-color: #9Ca3af;
+  --sns-bg-color: #e6f2ff;
 }
 
 .xl-20px-semibold {
@@ -127,36 +127,52 @@ input:focus {
   align-items: center;
 }
 
-.modal {
-  display: none; /* 초기에는 숨겨진 상태 */
-  position: fixed; /* 화면 전체를 덮도록 설정 */
-  z-index: 1; /* 다른 요소보다 위에 표시 */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto; /* 내용이 넘치면 스크롤 표시 */
-  background-color: rgba(0, 0, 0, 0.4); /* 배경 흐리게 처리 */
+#logo-wrap {
+  margin-bottom: 20px;
 }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 화면 중앙에 배치 */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* modal 창 너비 */
-}
-
-.close-button {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close-button:hover,
-.close-button:focus {
-  color: black;
-  text-decoration: none;
+#logo-href {
   cursor: pointer;
 }
+
+#email--title {
+  margin-bottom: 20px;
+}
+
+#email--body {
+  margin-bottom: 30px;
+}
+
+#email-error {
+  margin-top: 10px;
+}
+
+#pw--title {
+  margin-bottom: 20px;
+}
+
+#pw--body {
+  margin-bottom: 30px;
+}
+
+#pw-error {
+  margin-top: 10px;
+}
+
+#btn-submit {
+  cursor: pointer;
+  background-color: #3691FF;
+}
+
+#login-span-style {
+  color: white;
+}
+
+#sns-google-style {
+  cursor: pointer;
+}
+
+#sns-kakao-style {
+  cursor: pointer;
+}
+

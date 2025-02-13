@@ -9,11 +9,11 @@ let isPwOK = false;
 
 const btnSubmit = document.getElementById('btn-submit');
 
-updateButtonState();
+updateButtonState(); // 최초 실행
 
 /* ************ Email 이메일 ************* */
 inputEmail.addEventListener('focusin', (event) => {
-  // 포커스인 테두리 설정
+  // 포커스인 외곽선 설정
   inputEmail.style.borderColor = '#f3f4f6';
 });
 
@@ -79,7 +79,7 @@ inputPw.addEventListener('focusout', (event) => {
 /* ************************************* */
 
 
-/* ************로그인버튼로직************ */
+/* ************* 로그인버튼 ************* */
 btnSubmit.addEventListener('click', (event) => {
   event.preventDefault();
   const userForm = document.getElementById('user-form'); // 폼 객체
@@ -96,7 +96,7 @@ btnSubmit.addEventListener('click', (event) => {
   ];
 
   const findUser = USER_DATA.find(user => (user.email === email) && (user.password === password)); // 데이터 찾기
-  // console.log(findUser); // 콘솔로그: 찾은 객체 반환 (디버깅용)
+  // console.log(findUser);
   if (findUser) {
     console.log('로그인 성공! 폼 제출합니다.');
     userForm.submit();
@@ -104,13 +104,7 @@ btnSubmit.addEventListener('click', (event) => {
     // console.log(email);
     // console.log(password);
     // console.log(USER_DATA['email']);
-    const modal = document.getElementById('passwordErrorModal');
-    modal.style.display = 'block'; // modal 창 표시
-  
-    const closeButton = modal.querySelector('.close-button');
-    closeButton.onclick = function() {
-      modal.style.display = 'none'; // modal 창 닫기
-    }
+    alert('비밀번호가 일치하지 않습니다.')
     isPwOK = false;
     userForm.reset();
     updateButtonState();
@@ -134,16 +128,4 @@ function updateButtonState() {
     btnSubmit.disabled = false;
   }
 }
-/* ************************************* */
-
-
-/* **************유저데이터************** */
-// const USER_DATA = [
-//   { email: 'codeit1@codeit.com', password: "codeit101!" },
-//   { email: 'codeit2@codeit.com', password: "codeit202!" },
-//   { email: 'codeit3@codeit.com', password: "codeit303!" },
-//   { email: 'codeit4@codeit.com', password: "codeit404!" },
-//   { email: 'codeit5@codeit.com', password: "codeit505!" },
-//   { email: 'codeit6@codeit.com', password: "codeit606!" },
-// ]
 /* ************************************* */
