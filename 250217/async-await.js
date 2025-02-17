@@ -34,10 +34,13 @@
 // await을 붙이면 앞의 실행 결과를 기다렸다가 비동기 요청.
 // await은 곧 앞선 순서의 결과를 기다렸다가 결과가 나오면 다음 순서를 실행한다는 것
 
-
 // promise 배열로 반환하기 ( Promise.all() )
 const promises = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((id) =>
   printEmployeesFast(id)
 );
 const results = await Promise.all(promises); // .all: 전체가 pending이 아닐때까지 기다렸다가 반환
 console.log(results);
+
+// 1. 순서 지켜서 출력 -> 2.3초
+// 2. 순서없이 출력 -> 0.15초
+// 3. Promise.all 순서도 지키면서 나름 빠르게 -> 0.3초
