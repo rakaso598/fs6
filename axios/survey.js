@@ -1,4 +1,5 @@
-import * as api from "./index.js";
+// import * as api from "./index.js";
+import asdf, { getSurveys, deleteSurvey as removeSurvey } from './index.js'
 
 const surveys = await api.getSurveys({
   mbti: "enfj",
@@ -6,4 +7,4 @@ const surveys = await api.getSurveys({
 });
 console.log(surveys);
 
-await api.deleteSurvey(300, "1234")
+await api.removeSurvey(300, "1234")
