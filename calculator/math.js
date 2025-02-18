@@ -1,9 +1,8 @@
 // math.js에서 각 함수를 한번씩 실행해서 그 결과를 콘솔에 출력, 모델명도 함께
 
-import model, { add, subtract, multiply, divide } from "./calculator.js";
+import { add, subtract, multiply, divide, power } from "./s-calculator.js";
+import name from "./s-calculator.js";
 
-console.log(model);
-add(3, 6);
-subtract(3, 6);
-multiply(3, 6);
-divide(3, 6);
+console.log(name);
+console.log(add(100, 100));
+console.log(power(3, 6));
