@@ -2,13 +2,17 @@
 
 import axios from "axios";
 
-
-const url = new URL("https://learn.codeit.kr/api/color-surveys/13");
-const params = {
-  password: "0123"
+const deleteSurvey = async (id, password) => {
+  try {
+    const url = new URL(`https://learn.codeit.kr/api/color-surveys/${id}`);
+    const res = await axios.delete(url, { password });
+    return res.data;
+  } catch (e) {
+    if (e.response) {
+      console.log(e.reponse.status);
+      console.log(e.reponse.data);
+    } else {
+      console.log("request failed");
+    }
+  }
 };
-
-const res = await axios.delete(url, params);
-const data = await res.data;
-
-console.log(data);

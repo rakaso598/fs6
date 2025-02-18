@@ -3,8 +3,7 @@
 
 // axios ( URL, PARAMS )
 
-import axios from "axios";
-
+{
 const url = new URL("https://learn.codeit.kr/api/color-surveys");
 const params = {
   mbti: "ENFP",
@@ -14,5 +13,14 @@ const params = {
 
 const res = await axios.post(url, params);
 const data = await res.data;
+}
+
+{
+const url = new URL("https://learn.codeit.kr/api/color-surveys/13");
+
+
+const res = await axios.get(url);
+const data = await res.data;
 
 console.log(data);
+}
