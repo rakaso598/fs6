@@ -4,5 +4,8 @@ import { add, subtract, multiply, divide, power } from "./s-calculator.js";
 import name from "./s-calculator.js";
 
 console.log(name);
-console.log(add(100, 100));
-console.log(power(3, 6));
+console.log(add(100, 150));
+console.log(subtract(100, 150));
+console.log(multiply(100, 150));
+console.log(divide(100, 150));
+console.log(power(3, 5));
