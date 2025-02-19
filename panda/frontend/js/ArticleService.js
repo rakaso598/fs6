@@ -9,19 +9,33 @@ const requestErrorHandler = (e) => {
   }
 };
 
-// 아티클목록
-const getArticleListURL =
-  "https://panda-market-api-crud.vercel.app/articles?page=1&pageSize=10&orderBy=recentt";
-const getArticleList = async () => {
+// 목록조회
+const getArticleList = async ({
+  page,
+  pageSize,
+  orderBy = "recent",
+  keyword,
+}) => {
   try {
-    const res = await axios.get(getArticleListURL);
+    const params = {
+      page,
+      pageSize,
+      orderBy,
+    };
+    if (keyword) {
+      params.keyword = encodeURIComponent(keyword);
+    }
+    const res = await axios.get(
+      "https://panda-market-api-crud.vercel.app/articles",
+      { params }
+    );
     return res.data;
   } catch (e) {
     return requestErrorHandler(e);
   }
 };
 
-// 아티클
+// 개별조회
 const getArticleURL = "https://panda-market-api-crud.vercel.app/articles/427";
 const getArticle = async () => {
   try {
@@ -32,7 +46,7 @@ const getArticle = async () => {
   }
 };
 
-// 아티클생성
+// 생성
 const createArticleURL = "https://panda-market-api-crud.vercel.app/articles";
 const createArticleData = {
   image: "https://example.com/...",
@@ -48,7 +62,7 @@ const createArticle = async () => {
   }
 };
 
-// 아티클삭제
+// 삭제
 const deleteArticleURL =
   "https://panda-market-api-crud.vercel.app/articles/495";
 const deleteArticle = async () => {
@@ -60,7 +74,7 @@ const deleteArticle = async () => {
   }
 };
 
-// 아티클수정
+// 수정
 const patchArticleURL = "https://panda-market-api-crud.vercel.app/articles/427";
 const patchArticleData = {
   image: "https://example.com/...",

@@ -9,7 +9,7 @@ const requestErrorHandler = (e) => {
   }
 };
 
-// 상품목록
+// 목록조회
 const getProductListURL =
   "https://panda-market-api-crud.vercel.app/products?page=1&pageSize=10&orderBy=recent";
 const getProductList = async () => {
@@ -21,7 +21,7 @@ const getProductList = async () => {
   }
 };
 
-// 상품
+// 개별조회
 const getProductURL = "https://panda-market-api-crud.vercel.app/products/496";
 const getProduct = async () => {
   try {
@@ -32,7 +32,7 @@ const getProduct = async () => {
   }
 };
 
-// 상품생성
+// 생성
 const createProductURL = "https://panda-market-api-crud.vercel.app/products";
 const createProductData = {
   images: ["https://example.com/..."],
@@ -50,7 +50,7 @@ const createProduct = async () => {
   }
 };
 
-// 상품삭제
+// 삭제
 const deleteProductURL =
   "https://panda-market-api-crud.vercel.app/products/495";
 const deleteProduct = async () => {
@@ -62,7 +62,7 @@ const deleteProduct = async () => {
   }
 };
 
-// 상품수정
+// 수정
 const patchProductURL = "https://panda-market-api-crud.vercel.app/products/496";
 const patchProductData = {
   images: ["https://example.com/..."],
