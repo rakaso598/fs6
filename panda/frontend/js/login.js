@@ -1,90 +1,100 @@
 const inputEmail = document.getElementById('input-email');
 const emailError = document.getElementById('email-error');
-const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // 이메일 정규표현식
-let isEmailOK = false;
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // 이메일 검증 정규표현식
+let isEmailOK = false; // 이메일 검증 상태 변수
 
 const inputPw = document.getElementById('input-pw');
 const pwError = document.getElementById('pw-error');
-let isPwOK = false;
+let isPwOK = false; // 비밀번호 검증 상태 변수
 
 const btnSubmit = document.getElementById('btn-submit');
 
-updateButtonState(); // 최초 실행
+updateButtonState(); // 로드 시 최초 호출
 
-/* ************ Email 이메일 ************* */
+
+// 포커스인 시 테두리
 inputEmail.addEventListener('focusin', (event) => {
-  // 포커스인 외곽선 설정
   inputEmail.style.borderColor = '#f3f4f6';
 });
 
+// 이메일 유효성 검증
 inputEmail.addEventListener('focusout', (event) => {
   event.preventDefault();
+
   if (inputEmail.value === '') {
-    // 이메일이 없을 때
-    console.log('이메일 입력 없음.');
-    emailError.textContent = '이메일을 입력해주세요.';
+    // 입력값이 없는 경우
+    emailError.textContent = '이메일을 입력해주세요.'; // 에러 메시지
+
     emailError.style.color = 'red';
     inputEmail.style.borderColor = 'red';
     inputEmail.style.borderWidth = '2px';
+
     isEmailOK = false;
+
   } else if (emailRegex.test(inputEmail.value) === false) {
-    // 이메일 형식이 아닐때
-    console.log('이메일 형식이 아님.');
-    emailError.textContent = '잘못된 이메일 형식입니다.';
+    // 이메일 형식이 아닌 경우
+    emailError.textContent = '잘못된 이메일 형식입니다.'; // 에러 메시지
+
     emailError.style.color = 'red';
     inputEmail.style.borderColor = 'red';
     inputEmail.style.borderWidth = '2px';
+
     isEmailOK = false;
+
   } else {
-    emailError.textContent = '';
     inputEmail.style.borderColor = '#f3f4f6';
-    isEmailOK = true;
+
+    isEmailOK = true; // 상태값 변경 true
   }
-  updateButtonState()
+
+  updateButtonState() // 버튼 상태 업데이트
 });
-/* ************************************* */
 
 
-/* ************ Pw 비밀번호 ************* */
 inputPw.addEventListener('focusin', (event) => {
-  // 포커스인 테두리 설정
-  inputPw.style.borderColor = '#f3f4f6';
+  inputPw.style.borderColor = '#f3f4f6'; // 포커스인 시 테두리
 });
 
+// 비밀번호 유효성 검증
 inputPw.addEventListener('focusout', (event) => {
   event.preventDefault();
+
   if (inputPw.value === '') {
-    // 비밀번호가 없을 때
-    console.log('비밀번호 입력 없음.');
-    pwError.textContent = '비밀번호를 입력해주세요.';
+    // 비밀번호가 없는 경우
+    pwError.textContent = '비밀번호를 입력해주세요.'; // 에러 메시지
+
     pwError.style.color = 'red';
     inputPw.style.borderColor = 'red';
     inputPw.style.borderWidth = '2px';
+
     isPwOK = false;
+
   } else if ((inputPw.value.length < 8) === true) {
-    // 값이 8자 미만일 경우
-    console.log('비밀번호가 8자 미만임.');
-    pwError.textContent = '비밀번호를 8자 이상 입력해주세요.';
+    // 값이 8자 미만인 경우
+    pwError.textContent = '비밀번호를 8자 이상 입력해주세요.'; // 에러 메시지
+
     pwError.style.color = 'red';
     inputPw.style.borderColor = 'red';
     inputPw.style.borderWidth = '2px';
+
     isPwOK = false;
+
   } else {
-    pwError.textContent = '';
-    inputPw.style.borderColor = '#f3f4f6';
-    isPwOK = true;
+    inputPw.style.borderColor = '#f3f4f6'; // 포커스인 기본색
+
+    isPwOK = true; // 상태값 변경 true
   }
-  updateButtonState()
+
+  updateButtonState() // 버튼 상태 업데이트
 });
-/* ************************************* */
 
 
-/* ************* 로그인버튼 ************* */
+// 로그인버튼 클릭 시 폼 제출
 btnSubmit.addEventListener('click', (event) => {
   event.preventDefault();
-  const userForm = document.getElementById('user-form'); // 폼 객체
-  const email = document.getElementById('input-email').value; // 이메일 값
-  const password = document.getElementById('input-pw').value; // 비밀번호 값
+  const userForm = document.getElementById('user-form'); // 유저 폼 객체
+  const email = document.getElementById('input-email').value; // 이메일 인풋 값
+  const password = document.getElementById('input-pw').value; // 비밀번호 인풋 값
 
   const USER_DATA = [
     { email: 'codeit1@codeit.com', password: "codeit101!" },
@@ -95,37 +105,33 @@ btnSubmit.addEventListener('click', (event) => {
     { email: 'codeit6@codeit.com', password: "codeit606!" },
   ];
 
-  const findUser = USER_DATA.find(user => (user.email === email) && (user.password === password)); // 데이터 찾기
-  // console.log(findUser);
+  // 입력값과 일치하는 유저가 있는지 탐색
+  const findUser = USER_DATA.find(user => (user.email === email) && (user.password === password));
+
   if (findUser) {
-    console.log('로그인 성공! 폼 제출합니다.');
-    userForm.submit();
+    userForm.submit(); // 폼 제출
+
   } else {
-    // console.log(email);
-    // console.log(password);
-    // console.log(USER_DATA['email']);
-    alert('비밀번호가 일치하지 않습니다.')
-    isPwOK = false;
-    userForm.reset();
-    updateButtonState();
+    alert('비밀번호가 일치하지 않습니다.');
+    isPwOK = false; // 비밀번호 상태 변수를 기본값 false로 되돌림.
+    userForm.reset(); // 폼 초기화
+
+    updateButtonState(); // 버튼 상태 업데이트
   };
 });
-/* ************************************* */
 
 
-/* ************* 버튼 함수 ************* */
+// 버튼 상태 업데이트 함수
 function updateButtonState() {
-  btnSubmit.disabled = true;
+  btnSubmit.disabled = true; // 기본값: 비활성
+  
   if ((isEmailOK && isPwOK) === false) {
-    btnSubmit.disabled = true;
-    console.log('<로그인버튼> 입력값 누락!');
     btnSubmit.style.backgroundColor = 'gray';
     btnSubmit.style.cursor = 'default';
+    btnSubmit.disabled = true; // 버튼 비활성화
   } else {
-    console.log('<로그인버튼> 조건을 만족했습니다.');
     btnSubmit.style.backgroundColor = '#3691FF';
     btnSubmit.style.cursor = 'pointer';
-    btnSubmit.disabled = false;
+    btnSubmit.disabled = false; // 버튼 활성화
   }
 }
-/* ************************************* */
