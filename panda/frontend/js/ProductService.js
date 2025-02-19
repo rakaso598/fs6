@@ -3,11 +3,9 @@ import axios from "axios";
 // 핸들러
 const requestErrorHandler = (e) => {
   if (e.response) {
-    console.error(`${e.response.status},${e.response.data}`);
-    return `${e.response.status},${e.response.data}`;
+    return `요청 처리 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.`;
   } else {
-    console.error(e.message);
-    return `${e.message}`;
+    return `현재 서버에 접속할 수 없습니다. 잠시 후 다시 시도해주세요.`;
   }
 };
 
@@ -22,8 +20,6 @@ const getProductList = async () => {
     return requestErrorHandler(e);
   }
 };
-const productList = await getProductList();
-console.log(productList);
 
 // 상품
 const getProductURL = "https://panda-market-api-crud.vercel.app/products/496";
@@ -35,8 +31,6 @@ const getProduct = async () => {
     return requestErrorHandler(e);
   }
 };
-const product = await getProduct();
-console.log(product);
 
 // 상품생성
 const createProductURL = "https://panda-market-api-crud.vercel.app/products";
@@ -55,8 +49,6 @@ const createProduct = async () => {
     return requestErrorHandler(e);
   }
 };
-const createProductResponse = await createProduct();
-console.log(createProductResponse);
 
 // 상품삭제
 const deleteProductURL =
@@ -69,8 +61,6 @@ const deleteProduct = async () => {
     return requestErrorHandler(e);
   }
 };
-const deleteProductResponse = await deleteProduct();
-console.log(deleteProductResponse);
 
 // 상품수정
 const patchProductURL = "https://panda-market-api-crud.vercel.app/products/496";
@@ -89,5 +79,11 @@ const patchProduct = async () => {
     return requestErrorHandler(e);
   }
 };
-const patchProductResponse = await patchProduct();
-console.log(patchProductResponse);
+
+export {
+  getProductList,
+  getProduct,
+  createProduct,
+  deleteProduct,
+  patchProduct,
+};

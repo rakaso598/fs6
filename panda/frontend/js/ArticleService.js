@@ -3,11 +3,9 @@ import axios from "axios";
 // 핸들러
 const requestErrorHandler = (e) => {
   if (e.response) {
-    console.error(`${e.response.status},${e.response.data}`);
-    return `${e.response.status},${e.response.data}`;
+    return `요청 처리 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.`;
   } else {
-    console.error(e.message);
-    return `${e.message}`;
+    return `현재 서버에 접속할 수 없습니다. 잠시 후 다시 시도해주세요.`;
   }
 };
 
@@ -22,8 +20,6 @@ const getArticleList = async () => {
     return requestErrorHandler(e);
   }
 };
-const articleList = await getArticleList();
-console.log(articleList);
 
 // 아티클
 const getArticleURL = "https://panda-market-api-crud.vercel.app/articles/427";
@@ -35,8 +31,6 @@ const getArticle = async () => {
     return requestErrorHandler(e);
   }
 };
-const article = await getArticle();
-console.log(article);
 
 // 아티클생성
 const createArticleURL = "https://panda-market-api-crud.vercel.app/articles";
@@ -53,8 +47,6 @@ const createArticle = async () => {
     return requestErrorHandler(e);
   }
 };
-const createArticleResponse = await createArticle();
-console.log(createArticleResponse);
 
 // 아티클삭제
 const deleteArticleURL =
@@ -67,8 +59,6 @@ const deleteArticle = async () => {
     return requestErrorHandler(e);
   }
 };
-const deleteArticleResponse = await deleteArticle();
-console.log(deleteArticleResponse);
 
 // 아티클수정
 const patchArticleURL = "https://panda-market-api-crud.vercel.app/articles/427";
@@ -85,5 +75,11 @@ const patchArticle = async () => {
     return requestErrorHandler(e);
   }
 };
-const patchArticleResponse = await patchArticle();
-console.log(patchArticleResponse);
+
+export {
+  getArticleList,
+  getArticle,
+  createArticle,
+  deleteArticle,
+  patchArticle,
+};
