@@ -3,9 +3,9 @@ import axios from "axios";
 // 핸들러
 const requestErrorHandler = (e) => {
   if (e.response) {
-    return `처리 중 오류가 발생했습니다. 없는 데이터일 수 있으므로 다른 값을 입력해보세요.`;
+    return `처리 중 오류가 발생했습니다. 다른 값을 입력해보세요.`;
   } else {
-    return `서버에 접속하지 못했습니다. 잘못 만들어진 요청입니다.`;
+    return `서버에 접속하지 못했습니다.`;
   }
 };
 

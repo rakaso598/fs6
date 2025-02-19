@@ -3,9 +3,9 @@ import axios from "axios";
 // 핸들러
 const requestErrorHandler = (e) => {
   if (e.response) {
-    return `요청 처리 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.`;
+    return `처리 중 오류가 발생했습니다. 다른 값을 입력해보세요.`;
   } else {
-    return `현재 서버에 접속할 수 없습니다. 잠시 후 다시 시도해주세요.`;
+    return `서버에 접속하지 못했습니다.`;
   }
 };
 
