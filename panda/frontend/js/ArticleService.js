@@ -10,36 +10,30 @@ const requestErrorHandler = (e) => {
 };
 
 // 목록조회
-const getArticleList = async ({
-  page,
-  pageSize,
-  orderBy = "recent",
-  keyword,
-}) => {
+const getArticleList = async (page, pageSize, orderBy = "recent", keyword) => {
   try {
-    const params = {
-      page,
-      pageSize,
-      orderBy,
-    };
     if (keyword) {
-      params.keyword = encodeURIComponent(keyword);
+      const res = await axios.get(
+        `https://panda-market-api-crud.vercel.app/articles?page=${page}&pageSize=${pageSize}&orderBy=${orderBy}&keyword=${keyword}`
+      );
+      return res.data;
+    } else {
+      const res = await axios.get(
+        `https://panda-market-api-crud.vercel.app/articles?page=${page}&pageSize=${pageSize}&orderBy=${orderBy}`
+      );
+      return res.data;
     }
-    const res = await axios.get(
-      "https://panda-market-api-crud.vercel.app/articles",
-      { params }
-    );
-    return res.data;
   } catch (e) {
     return requestErrorHandler(e);
   }
 };
 
 // 개별조회
-const getArticleURL = "https://panda-market-api-crud.vercel.app/articles/427";
-const getArticle = async () => {
+const getArticle = async (productId) => {
   try {
-    const res = await axios.get(getArticleURL);
+    const res = await axios.get(
+      `https://panda-market-api-crud.vercel.app/articles/${productId}`
+    );
     return res.data;
   } catch (e) {
     return requestErrorHandler(e);

@@ -14,16 +14,18 @@ import {
   patchProduct,
 } from "./ProductService.js";
 
-const articleListParams = {
-  page: 1,
-  pageSize: 10,
-  keyword: "상품",
-};
-const articleList = await getArticleList(articleListParams);
+// 목록조회: page, pageSize, orderBy, keyword
+
+// const articleList = await getArticleList(1, 10, undefined);
+// console.log(articleList);
+
+const articleList = await getArticleList(1, 10, undefined, "이름");
 console.log(articleList);
 
-// const article = await getArticle();
-// console.log(article);
+// 개별조회: articleId
+
+const article = await getArticle(3);
+console.log(article);
 
 // const createArticleResponse = await createArticle();
 // console.log(createArticleResponse);
