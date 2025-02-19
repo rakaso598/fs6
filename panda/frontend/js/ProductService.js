@@ -9,19 +9,26 @@ const requestErrorHandler = (e) => {
   }
 };
 
-// 목록조회
-const getProductListURL =
-  "https://panda-market-api-crud.vercel.app/products?page=1&pageSize=10&orderBy=recent";
-const getProductList = async () => {
+// 상품목록
+const getProductList = async (page, pageSize, orderBy = "recent", keyword) => {
   try {
-    const res = await axios.get(getProductListURL);
-    return res.data;
+    if (keyword) {
+      const res = await axios.get(
+        `https://panda-market-api-crud.vercel.app/products?page=${page}&pageSize=${pageSize}&orderBy=${orderBy}&keyword=${keyword}`
+      );
+      return res.data;
+    } else {
+      const res = await axios.get(
+        `https://panda-market-api-crud.vercel.app/products?page=${page}&pageSize=${pageSize}&orderBy=${orderBy}`
+      );
+      return res.data;
+    }
   } catch (e) {
     return requestErrorHandler(e);
   }
 };
 
-// 개별조회
+// 상품개별
 const getProductURL = "https://panda-market-api-crud.vercel.app/products/496";
 const getProduct = async () => {
   try {
@@ -32,48 +39,38 @@ const getProduct = async () => {
   }
 };
 
-// 생성
-const createProductURL = "https://panda-market-api-crud.vercel.app/products";
-const createProductData = {
-  images: ["https://example.com/..."],
-  tags: ["전자제품"],
-  price: 0,
-  description: "string",
-  name: "상품 이름",
-};
-const createProduct = async () => {
+// 상품생성
+const createProduct = async (createProductData) => {
   try {
-    const res = await axios.post(createProductURL, createProductData);
+    const res = await axios.post(
+      "https://panda-market-api-crud.vercel.app/products",
+      createProductData
+    );
     return res.data;
   } catch (e) {
     return requestErrorHandler(e);
   }
 };
 
-// 삭제
-const deleteProductURL =
-  "https://panda-market-api-crud.vercel.app/products/495";
-const deleteProduct = async () => {
+// 상품삭제
+const deleteProduct = async (productId) => {
   try {
-    const res = await axios.delete(deleteProductURL);
+    const res = await axios.delete(
+      `https://panda-market-api-crud.vercel.app/products/${productId}`
+    );
     return res.data;
   } catch (e) {
     return requestErrorHandler(e);
   }
 };
 
-// 수정
-const patchProductURL = "https://panda-market-api-crud.vercel.app/products/496";
-const patchProductData = {
-  images: ["https://example.com/..."],
-  tags: ["전자제품"],
-  price: 0,
-  description: "string",
-  name: "상품 이름",
-};
-const patchProduct = async () => {
+// 상품수정
+const patchProduct = async (productId, patchProductData) => {
   try {
-    const res = await axios.patch(patchProductURL, patchProductData);
+    const res = await axios.patch(
+      `https://panda-market-api-crud.vercel.app/products/${productId}`,
+      patchProductData
+    );
     return res.data;
   } catch (e) {
     return requestErrorHandler(e);

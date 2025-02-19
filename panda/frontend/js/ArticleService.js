@@ -66,11 +66,6 @@ const deleteArticle = async (articleId, patchArticleData) => {
 };
 
 // 게시글수정
-// const patchArticleData = {
-//   image: "https://example.com/...",
-//   content: "게시글 내용입니다.",
-//   title: "게시글 제목입니다.",
-// };
 const patchArticle = async (articleId, patchArticleData) => {
   try {
     const res = await axios.patch(
